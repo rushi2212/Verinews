@@ -16,7 +16,7 @@ const Header = () => {
           onClick={() => navigate("/")}
           style={{ cursor: "pointer" }}
         >
-          <h1>� VeriNews</h1>
+          <h1>🔍 VeriNews</h1>
           <span>AI-Powered News Verification</span>
         </div>
 
