@@ -1,0 +1,52 @@
+.app-header {
+  background: linear-gradient(90deg, #0f172a, #0b1220);
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.logo span {
+  display: block;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.nav-links a {
+  margin: 0 0.5rem;
+  color: #e2e8f0;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.user-actions .login-btn,
+.user-actions .signup-btn {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-btn {
+  background: transparent;
+  color: #e2e8f0;
+}
+
+.signup-btn {
+  background: #06b6d4;
+  color: #08111a;
+}
