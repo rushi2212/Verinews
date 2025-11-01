@@ -3,7 +3,7 @@ import "./VoiceInput.css";
 import {
   startSpeechRecognition,
   stopSpeechRecognition,
-} from "../services/speech";
+} from "../services/Speech";
 
 const VoiceInput = ({ onResult, language, disabled }) => {
   const [isListening, setIsListening] = useState(false);
