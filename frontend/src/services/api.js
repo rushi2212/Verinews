@@ -1,7 +1,6 @@
 // Use Vite environment variables (prefixed with VITE_) via import.meta.env.
 // Fall back to localhost if not provided.
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:8000/api/v1";
+const API_BASE_URL ="https://verinews-czqj.onrender.com/api/v1";
 
 export const checkNewsText = async (text, language = "en") => {
   const formData = new FormData();
