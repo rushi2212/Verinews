@@ -1,52 +1,159 @@
 .app-header {
-  background: linear-gradient(90deg, #0f172a, #0b1220);
+  background: linear-gradient(90deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
   color: #fff;
   padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.1);
 }
 
 .header-content {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
 }
 
 .logo h1 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .logo span {
-  display: block;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #cbd5e1;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
-.nav-links a {
-  margin: 0 0.5rem;
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-link {
   color: #e2e8f0;
   text-decoration: none;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-.user-actions .login-btn,
-.user-actions .signup-btn {
-  margin-left: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
   cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
 }
 
-.login-btn {
-  background: transparent;
-  color: #e2e8f0;
+.nav-link:hover {
+  color: #06b6d4;
+  border-bottom-color: #06b6d4;
+  transform: translateY(-1px);
 }
 
-.signup-btn {
-  background: #06b6d4;
-  color: #08111a;
+.nav-link.active {
+  color: #06b6d4;
+  border-bottom-color: #06b6d4;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #06b6d4, #0891b2);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .header-content {
+    gap: 1rem;
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+
+  .logo span {
+    font-size: 0.75rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+    margin-left: auto;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .header-content {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .logo h1 {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .logo span {
+    font-size: 0.65rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    margin-left: auto;
+    flex: 1;
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 0.3rem 0;
+  }
 }

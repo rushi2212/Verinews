@@ -290,3 +290,166 @@
   margin: 0.5rem 0 0 0;
   font-size: 0.95rem;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .news-checker {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 16px;
+  }
+
+  .news-checker h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tab-navigation {
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .tab-navigation button {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.85rem;
+    flex: 1;
+  }
+
+  .text-input-form textarea {
+    padding: 0.9rem;
+    font-size: 16px;
+    border-radius: 10px;
+    rows: 4;
+  }
+
+  .text-input-form button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .voice-input-section,
+  .image-input-section {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .image-input-section input[type="file"] {
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .image-input-section p {
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .voice-preview,
+  .transcript-preview {
+    padding: 1rem;
+    margin-top: 0.8rem;
+  }
+
+  .voice-preview h4,
+  .transcript-preview h4 {
+    font-size: 0.9rem;
+  }
+
+  .voice-preview p,
+  .transcript-preview p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-checker {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .news-checker h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .tab-navigation {
+    gap: 0;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .tab-navigation button {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.75rem;
+    flex: 1;
+    min-width: 30%;
+    border-radius: 0;
+  }
+
+  .tab-navigation button:first-child {
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+
+  .tab-navigation button:last-child {
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .text-input-form {
+    gap: 0.75rem;
+  }
+
+  .text-input-form textarea {
+    padding: 0.8rem;
+    font-size: 16px;
+    border-radius: 8px;
+    rows: 3;
+    min-height: 80px;
+  }
+
+  .text-input-form button {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .voice-input-section,
+  .image-input-section {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .image-input-section input[type="file"] {
+    padding: 0.7rem;
+    margin-bottom: 0.7rem;
+    border-radius: 8px;
+  }
+
+  .image-input-section p {
+    font-size: 0.8rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .voice-preview,
+  .transcript-preview {
+    padding: 0.8rem;
+    margin-top: 0.7rem;
+    border-radius: 8px;
+  }
+
+  .voice-preview h4,
+  .transcript-preview h4 {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .voice-preview p,
+  .transcript-preview p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}

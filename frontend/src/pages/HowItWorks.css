@@ -1,0 +1,432 @@
+.how-it-works {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 182, 212, 0.1) 0%,
+    rgba(34, 197, 94, 0.05) 100%
+  );
+  border-bottom: 1px solid rgba(226, 232, 240, 0.1);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Steps Section */
+.steps-section {
+  padding: 4rem 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    transparent 100%
+  );
+}
+
+.steps-section h2,
+.workflow-section h2,
+.features-section h2,
+.tech-section h2,
+.cta-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.step-card {
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #06b6d4, #0891b2);
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(226, 232, 240, 0.25);
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.15);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+}
+
+.step-number {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #06b6d4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.step-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.step-card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Workflow Section */
+.workflow-section {
+  padding: 4rem 0;
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.phase-card {
+  background: rgba(6, 182, 212, 0.05);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.phase-card:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.4);
+}
+
+.phase-card h3 {
+  color: #06b6d4;
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+}
+
+.phase-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.phase-card li {
+  color: #cbd5e1;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.checkmark {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+/* Features Section */
+.features-section {
+  padding: 4rem 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.1);
+  border-radius: 14px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(226, 232, 240, 0.2);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.feature-card p {
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Tech Section */
+.tech-section {
+  padding: 4rem 0;
+  background: rgba(6, 182, 212, 0.03);
+  border-top: 1px solid rgba(226, 232, 240, 0.1);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.1);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 12px;
+  padding: 1.8rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.1);
+}
+
+.tech-card h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.tech-card p {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.cta-section p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 16px rgba(6, 182, 212, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(6, 182, 212, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .steps-section,
+  .workflow-section,
+  .features-section,
+  .tech-section,
+  .cta-section {
+    padding: 2.5rem 0;
+  }
+
+  .steps-section h2,
+  .workflow-section h2,
+  .features-section h2,
+  .tech-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .steps-grid,
+  .features-grid {
+    gap: 1.5rem;
+  }
+
+  .step-card {
+    padding: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .step-card h3,
+  .feature-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .steps-section,
+  .workflow-section,
+  .features-section,
+  .tech-section,
+  .cta-section {
+    padding: 2rem 0;
+  }
+
+  .steps-section h2,
+  .workflow-section h2,
+  .features-section h2,
+  .tech-section h2,
+  .cta-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .steps-grid,
+  .workflow-grid,
+  .features-grid,
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .step-card,
+  .feature-card,
+  .phase-card,
+  .tech-card {
+    padding: 1.2rem;
+  }
+
+  .step-card h3,
+  .feature-card h3,
+  .tech-card h3 {
+    font-size: 1rem;
+  }
+
+  .step-card p,
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+  }
+
+  .cta-button {
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+  }
+}

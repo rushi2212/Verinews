@@ -1,19 +1,8 @@
 .App {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 40%, #f093fb 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
   position: relative;
   overflow-x: hidden;
-  animation: bgShift 12s ease-in-out infinite;
-}
-
-@keyframes bgShift {
-  0%,
-  100% {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 40%, #f093fb 100%);
-  }
-  50% {
-    background: linear-gradient(135deg, #764ba2 0%, #f093fb 40%, #667eea 100%);
-  }
 }
 
 .App::before {
@@ -25,37 +14,16 @@
   height: 100%;
   background: radial-gradient(
       circle at 20% 50%,
-      rgba(120, 119, 198, 0.35) 0%,
+      rgba(6, 182, 212, 0.1) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 20%,
-      rgba(255, 119, 198, 0.35) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 80%,
-      rgba(120, 219, 255, 0.45) 0%,
+      rgba(34, 197, 94, 0.05) 0%,
       transparent 50%
     );
   pointer-events: none;
   z-index: -1;
-  animation: gradientShift 16s ease-in-out infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    opacity: 1.1;
-    transform: scale(1.05) rotate(5deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
 }
 
 .container {
@@ -151,16 +119,69 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 1rem 0.5rem;
+    padding: 0.75rem 0.5rem;
+    max-width: 100%;
   }
 
   .language-selector-container {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .input-section,
   .results-section {
-    padding: 1.5rem;
+    padding: 1.25rem 1rem;
     border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .input-section:hover,
+  .results-section:hover {
+    transform: translateY(-2px);
+  }
+
+  .glass-card {
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin: 0.75rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding-top: 0;
+  }
+
+  .container {
+    padding: 0.5rem;
+    margin: 0;
+  }
+
+  .language-selector-container {
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .input-section,
+  .results-section {
+    padding: 1rem 0.875rem;
+    border-radius: 12px;
+    margin: 0.5rem 0;
+  }
+
+  .glass-card {
+    padding: 1rem 0.875rem;
+    border-radius: 10px;
+    margin: 0.5rem 0;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   }
 }

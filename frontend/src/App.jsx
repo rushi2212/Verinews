@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import NewsChecker from "./components/NewsChecker";
 import Results from "./components/Results";
 import LanguageSelector from "./components/LanguageSelector";
+import HowItWorks from "./pages/HowItWorks";
 
-function App() {
+function Home() {
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(false);
   const [language, setLanguage] = useState("en");
@@ -15,9 +17,7 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
-
+    <>
       <div className="container">
         <div className="language-selector-container">
           <LanguageSelector
@@ -41,6 +41,18 @@ function App() {
           </div>
         </div>
       </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/how-it-works" element={<HowItWorks />} />
+      </Routes>
     </div>
   );
 }
