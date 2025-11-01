@@ -1,37 +1,47 @@
-# Use a stable Python base with known wheel availability
-FROM python:3.10-slim
+# ====================================
+# Stage 1 — Build environment
+# ====================================
+FROM python:3.11-slim AS builder
 
-# Avoid prompts and set LANG
-ENV DEBIAN_FRONTEND=noninteractive \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PORT=8000
+# Prevent Python from writing .pyc files and buffering output
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
-# Install system deps needed for some Python packages (adjust as needed)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    gcc \
-    libpq-dev \
-    libsndfile1 \
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies (for torch, easyocr, pillow)
+RUN apt-get update && apt-get install -y \
     ffmpeg \
+    libsm6 \
+    libxext6 \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Create working directory
-WORKDIR /srv/backend
+# Copy requirements and install
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy requirements first (for better layer caching)
-COPY backend/requirements.txt .
+# ====================================
+# Stage 2 — Runtime environment
+# ====================================
+FROM python:3.11-slim
 
-# Upgrade pip and install wheels first
-RUN pip install --upgrade pip setuptools wheel \
-    && pip install -r requirements.txt
+WORKDIR /app
 
-# Copy app sources
-COPY backend/ ./ 
+# Copy dependencies from builder stage
+COPY --from=builder /usr/local /usr/local
 
-# Expose the port (Render will set PORT env)
-EXPOSE 8000
+# Copy project files
+COPY . .
 
-# Run the app — use PORT env variable (Render provides $PORT)
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+# Expose the port used by Uvicorn
+EXPOSE 10000
+
+# Set environment variables (Render replaces these automatically)
+ENV TAVILY_API_KEY=""
+ENV GEMINI_API_KEY=""
+ENV GROQ_API_KEY=""
+
+# Start FastAPI app
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "10000"]
