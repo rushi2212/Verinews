@@ -2,7 +2,7 @@ services:
   - type: web
     name: verinews-backend
     env: docker
-    rootDir: ./backend
+    rootDir: ./
     plan: free
     envVars:
       - key: TAVILY_API_KEY
